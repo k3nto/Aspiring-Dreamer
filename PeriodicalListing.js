@@ -26,30 +26,6 @@ function romanize (num) {
 function issueNumber(input){
 	var n = 0;
 	switch(input.getMonth()){
-	case 11:
-		n+=30;
-	case 10:
-		n+=31;
-	case 9:
-		n+=30;
-	case 8:
-		n+=31;
-	case 7:
-		n+=31;
-	case 6:
-		n+=30;
-	case 5:
-		n+=31;
-	case 4:
-		n+=30;
-	case 3:
-		n+=31;
-	case 2:
-		n+=(input.getFullYear() % 4 == 0)?29:28;
-	case 1:
-		n+=31;
-	case 0:
-		n+=input.getDate();
 	case 11:n+=30;
 	case 10:n+=31;
 	case 9:n+=30;
@@ -97,9 +73,6 @@ function dateString(input){
 function urbanaDate(){
 	var local = new Date();
 	var difference = local.getTimezoneOffset() - 6*60;
-	var urbana = new Date(local.getFullYear(), local.getMonth(), local.getDate(), local.getHours(), 
-	local.getMinutes()+difference, local.getSeconds(), local.getMilliseconds());
-	return urbana;
 	
 	return new Date(local.getFullYear(), local.getMonth(), local.getDate(), local.getHours(), 
 			local.getMinutes()+difference, local.getSeconds(), local.getMilliseconds());
